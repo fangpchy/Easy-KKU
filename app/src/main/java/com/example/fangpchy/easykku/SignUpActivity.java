@@ -111,6 +111,11 @@ public class SignUpActivity extends AppCompatActivity {
             Log.d("12novV1", "imagepath ==>" + imagePathString);
 
 
+            //Find Name of Image
+            imagePathString = imagePathString.substring(imagePathString.lastIndexOf("/"));
+            Log.d("12novV1", "imageName ==>" + imageNameString);
+
+
 
 
         }   // if
@@ -133,6 +138,6 @@ public class SignUpActivity extends AppCompatActivity {
             result = uri.getPath();
         }
 
-        return null;
+        return result;
     }
 }   // Main Class
