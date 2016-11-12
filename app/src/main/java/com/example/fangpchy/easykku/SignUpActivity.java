@@ -1,5 +1,7 @@
 package com.example.fangpchy.easykku;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +18,7 @@ public class SignUpActivity extends AppCompatActivity {
     private ImageView imageView;
     private Button button;
     private String nameString, phoneString, userString, passwordString;
+    private Uri uri;
 
 
     @Override
@@ -59,7 +62,32 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
 
+     // Image Controller
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT); //class ที่ทำหน้าที่ย้ายการทำงาน และโยนไปที่โปรแกรมอื่น
+                intent.setType("image/*");
+                startActivityForResult(Intent.createChooser(intent, "โปรดเลือกแอพดูภาพ"), 0);
+
+            }  //onClick
+        });
+
 
     }   // Main Method
 
+    @Override
+    protected void onActivityResult(int requestCode,
+                                    int resultCode,
+                                    Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if ((requestCode == 0) && (resultCode == RESULT_OK))  {
+
+            Log.d("12novV1", "Result OK");
+
+        }   // if
+
+    }   //OnActivity
 }   // Main Class
