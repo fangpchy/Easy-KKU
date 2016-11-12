@@ -1,6 +1,8 @@
 package com.example.fangpchy.easykku;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -86,6 +88,21 @@ public class SignUpActivity extends AppCompatActivity {
         if ((requestCode == 0) && (resultCode == RESULT_OK))  {
 
             Log.d("12novV1", "Result OK");
+
+            //Show Image
+            uri = data.getData();
+            try {
+
+                Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver()
+                        .openInputStream(uri));
+                imageView.setImageBitmap(bitmap);
+
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
 
         }   // if
 
