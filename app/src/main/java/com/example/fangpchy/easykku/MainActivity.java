@@ -157,6 +157,14 @@ public class MainActivity extends AppCompatActivity {
                     //Password True
                     Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show();
 
+                    //Intent to Service
+                    Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
+                    intent.putExtra("Name", nameStrings);
+                    intent.putExtra("Phone", phoneStrings);
+                    intent.putExtra("Image", imageStrings);
+                    startActivity(intent);
+                    finish();
+
 
 
 
@@ -164,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     //Password False
                     MyAlert myAlert = new MyAlert(context, R.drawable.rat48,
                             getResources().getString(R.string.title_PasswordFalse),
-                            getResources().getString(R.string.message_PassordFalse));
+                            getResources().getString(R.string.message_PasswordFalse));
                     myAlert.myDialog();
                 }
 
