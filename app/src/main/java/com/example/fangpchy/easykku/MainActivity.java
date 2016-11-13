@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         //การทำ Bind widget(การผูก widget กับตัวแปร)
         signInButton = (Button) findViewById(R.id.button);
-        signUpButton = (Button) findViewById(R.id.button);
+        signUpButton = (Button) findViewById(R.id.button2);
 
         //การเขียน Controller
         signUpButton.setOnClickListener(new View.OnClickListener() {
