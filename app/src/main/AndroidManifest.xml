@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".SpaceScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,10 @@
         <activity
             android:name=".SignUpActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ServiceActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
